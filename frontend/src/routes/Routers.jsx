@@ -1,4 +1,3 @@
-
 import Home from "../pages/Home";
 import Services from "../pages/Services";
 import Login from "../pages/Login";
@@ -13,10 +12,10 @@ const Routers = () => {
     <Routes>
       <Route path="/" element={<Home />} />
       <Route path="/home" element={<Home />} />
-      <Route path="/doctors" element={<Doctors />} />
+      <Route path="/doctor" element={<Doctors />} />
       <Route path="/doctors/:id" element={<DoctorsDetails />} />
       <Route path="/login" element={<Login />} />
-      <Route path="/signup" element={<Signup />} />
+      <Route path="/register" element={<Signup />} />
       <Route path="/services" element={<Services />} />
       <Route path="/contact" element={<Contact />} />
     </Routes>
