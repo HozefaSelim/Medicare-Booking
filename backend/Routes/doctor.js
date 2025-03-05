@@ -1,0 +1,20 @@
+import express from "express";
+import {
+  updateDoctor,
+  deleteDoctor,
+  getSingleDoctor,
+  getAllDoctor,
+} from "../Controllers/doctorController.js";
+import { authenticate, restrict } from "../auth/verifyToken.js";
+import reviewRouter from "./review.js";
+const router = express.Router();
+
+router.get("/:id", getSingleDoctor);
+router.get("/", getAllDoctor);
+router.put("/:id", authenticate, restrict(["doctor"]), updateDoctor);
+router.delete("/:id", authenticate, restrict(["doctor"]), deleteDoctor);
+
+// nested route
+router.use("/:doctorId/reviews", reviewRouter);
+
+export default router;
